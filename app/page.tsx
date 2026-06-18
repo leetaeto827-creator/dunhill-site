@@ -1,65 +1,87 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+    <main style={{ backgroundColor: "black", minHeight: "100vh", margin: 0, padding: 0 }}>
+      <style>{`
+        @keyframes goldShine {
+          from {
+            opacity: 0.65;
+            text-shadow: 0 0 6px gold;
+          }
+          to {
+            opacity: 1;
+            text-shadow: 0 0 18px gold, 0 0 35px orange;
+          }
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .fade-in {
+          animation: fadeIn 1s ease forwards;
+        }
+
+        .gold-shine {
+          animation: goldShine 1.2s infinite alternate;
+        }
+
+        .gold-button {
+          transition: all 0.25s ease;
+        }
+
+        .gold-button:hover {
+          transform: scale(1.04);
+          box-shadow: 0 0 22px gold;
+        }
+      `}</style>
+
+      <div style={{ maxWidth: "430px", margin: "0 auto", backgroundColor: "black", textAlign: "center" }}>
+        <img className="fade-in" src="/banner.png" alt="던힐 배너" style={{ width: "100%", display: "block" }} />
+
+        <img className="fade-in" src="/girl.png" alt="메인 이미지" style={{ width: "100%", display: "block", animationDelay: "0.3s" }} />
+
+        <section className="gold-shine fade-in" style={{ margin: "24px 16px", padding: "28px 18px", border: "1px solid gold", borderRadius: "22px", color: "gold" }}>
+          <h1>마포역 · 신촌역 인근</h1>
+          <h2>최저의 가격</h2>
+          <h2>최고의 비주얼</h2>
+        </section>
+
+        <section className="fade-in" style={{ margin: "20px 16px", padding: "24px 18px", border: "1px solid gold", borderRadius: "18px", color: "white", lineHeight: "1.8" }}>
+          <p>안녕하세요.</p>
+          <p>형님들의 즐거운 밤을 책임질<br />이달인 실장입니다.</p>
+          <p>저희 가게는 신촌역, 마포역 인근에 위치한<br />비강남권 최대 규모의 메이저 셔츠룸입니다.</p>
+          <p>형님들께서 귀중한 시간을 내어 방문해 주시는 만큼, 만족스러운 서비스를 제공하기 위해 항상 최선을 다하고 있습니다.</p>
+          <p>언제든 편하게 문의 주시면<br />친절하고 상세하게 안내해 드리겠습니다.</p>
+          <p style={{ color: "gold", fontWeight: "bold" }}>감사합니다.<br />이달인 실장</p>
+        </section>
+
+        <div className="fade-in" style={{ padding: "20px 16px" }}>
+          <a className="gold-button" href="tel:01080399532" style={{ display: "block", backgroundColor: "gold", color: "black", padding: "18px", borderRadius: "14px", textDecoration: "none", fontSize: "22px", fontWeight: "bold", marginBottom: "14px" }}>
+            📞 전화 문의
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+
+          <a className="gold-button" href="sms:01080399532" style={{ display: "block", border: "1px solid gold", color: "gold", padding: "18px", borderRadius: "14px", textDecoration: "none", fontSize: "22px", fontWeight: "bold", marginBottom: "14px" }}>
+            💬 문자 문의
           </a>
+
+          <Link className="gold-button" href="/shirtroom" style={{ display: "block", border: "1px solid gold", color: "gold", padding: "18px", borderRadius: "14px", textDecoration: "none", fontSize: "20px", fontWeight: "bold", marginBottom: "14px" }}>
+            ❓ 셔츠룸이란?
+          </Link>
+
+          <Link className="gold-button" href="/recruit" style={{ display: "block", backgroundColor: "gold", color: "black", padding: "18px", borderRadius: "14px", textDecoration: "none", fontSize: "20px", fontWeight: "bold" }}>
+            👑 공주님들 상시모집
+          </Link>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
