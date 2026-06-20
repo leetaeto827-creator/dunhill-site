@@ -77,9 +77,7 @@ export default function Home() {
             ❓ 셔츠룸이란?
           </Link>
 
-          <Link className="gold-button" href="/recruit" style={{ display: "block", backgroundColor: "gold", color: "black", padding: "18px", borderRadius: "14px", textDecoration: "none", fontSize: "20px", fontWeight: "bold" }}>
-            👑 공주님들 상시모집
-          </Link>
+         
         </div>
       </div>
     </main>
